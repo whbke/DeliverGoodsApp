@@ -1,4 +1,4 @@
-package guo.appmapnavi;
+package guo.delivergoods;
 
 import org.junit.Test;
 

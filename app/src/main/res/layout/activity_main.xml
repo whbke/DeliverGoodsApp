@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="guo.appmapnavi.MainActivity">
+    tools:context="su.delivergoods.MainActivity">
 
 
     <Button
