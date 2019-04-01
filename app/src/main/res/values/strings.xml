@@ -21,7 +21,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="action_navigation">Navigation</string>
-    <string name="action_show_note">Note</string>
+    <string name="action_commit_note">Commit Note</string>
     <string name="text_shop_name">Shop Name</string>
     <string name="title_function">Function</string>
     <string name="title_info">Info</string>
