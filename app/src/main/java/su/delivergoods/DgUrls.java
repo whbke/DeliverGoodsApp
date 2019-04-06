@@ -36,7 +36,13 @@ public class DgUrls {
     public static String getCarInfo() {
         return address_server + "/dg/getCarInfo";
     }
-    public static String getShopGoodsList(String shopId) {
-        return address_server + "/dg/getShopGoodsList?shopId=" + shopId;
+//    public static String getShopGoodsList(String shopId) {
+//        return address_server + "/dg/getShopGoodsList?shopId=" + shopId;
+//    }
+    public static String getShopNoteToday(String carId, String shopId) {
+        return address_server + "/dg/getShopNoteToday?carId=" + carId + "&shopId=" + shopId;
+    }
+    public static String commitShopNote() {
+        return address_server + "/dg/commitShopNote";
     }
 }

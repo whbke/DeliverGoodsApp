@@ -29,4 +29,7 @@
     <string name="text_car_name">Car Name</string>
     <string name="text_route_name">Route Name</string>
     <string name="title_activity_shop_detail">Shop Detail</string>
+    <string name="text_total_price">Total Price</string>
+    <string name="text_actual_price">Actual Price</string>
+    <string name="text_bookkeeping">Bookkeeping</string>
 </resources>

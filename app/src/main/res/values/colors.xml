@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorTableHeader">#0000FF</color>
+    <color name="colorEditTextChange">#FF0000</color>
+    <color name="colorEditReadonly">#DCDCDC</color>
 </resources>
