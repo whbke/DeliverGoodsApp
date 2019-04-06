@@ -36,20 +36,21 @@ import okhttp3.internal.http.RealResponseBody;
 public class CarInfoActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private static final String TAG = "ShopListActivity";
+    private static CarInfoActivity m_instance = null;
 
     private List<Shop> m_shopList = new ArrayList<>();
-    private Shop m_currentShop = null;
+//    private Shop m_currentShop = null;
     private String m_carId = null;
     private JSONObject m_carInfoJson = null;
     private static final Integer SHOP_MENU_START_ID = 100;
 
-    protected static final int MSG_UPDATE_CAR_LIST = 0;
+    protected static final int MSG_UPDATE_CAR_INFO = 0;
 
     private final Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
-                case MSG_UPDATE_CAR_LIST:
-                    updateCarInfoUI();
+                case MSG_UPDATE_CAR_INFO:
+                    _updateCarInfoUI();
                     break;
                 default:
                     break;
@@ -57,12 +58,17 @@ public class CarInfoActivity extends AppCompatActivity
         }
     };
 
+    public static CarInfoActivity getInstance() {
+        return m_instance;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_info);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        m_instance = this;
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -71,13 +77,13 @@ public class CarInfoActivity extends AppCompatActivity
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        refreshShopList();
+        updateCarInfo();
     }
 
     /**
      * 刷新商店列表
      */
-    private void refreshShopList() {
+    public void updateCarInfo() {
         /////////////////////////////////////////获取Shop List////////////////////////////////
         // 1.创建OkHttpClient对象
         // 2.通过new FormBody()调用build方法,创建一个RequestBody,可以用add添加键值对
@@ -104,7 +110,7 @@ public class CarInfoActivity extends AppCompatActivity
                             new Thread() {
                                 public void run() {
                                     Message message = Message.obtain(); //获取消息的载体
-                                    message.what = MSG_UPDATE_CAR_LIST;
+                                    message.what = MSG_UPDATE_CAR_INFO;
                                     handler.sendMessage(message);
                                 };
                             }.start();
@@ -121,7 +127,7 @@ public class CarInfoActivity extends AppCompatActivity
         });
     }
 
-    private void updateCarInfoUI() {
+    private void _updateCarInfoUI() {
         synchronized (this) {
             if ( m_carInfoJson == null ) {
                 return;
@@ -144,6 +150,7 @@ public class CarInfoActivity extends AppCompatActivity
             // 显示车上的商品列表
             int width = (int) (getWindowManager().getDefaultDisplay().getWidth() * 1.0 / 2);
             TableLayout table = (TableLayout) findViewById(R.id.table_car_goods);
+            table.removeAllViews();
             {
                 Resources resource = (Resources) getBaseContext().getResources();
                 ColorStateList csl = (ColorStateList) resource.getColorStateList(R.color.colorTableHeader);
@@ -197,6 +204,7 @@ public class CarInfoActivity extends AppCompatActivity
         if ( joShopArray == null || joShopArray.isEmpty() ) {
             ToastUtils.show(CarInfoActivity.this, "没有商家！");
         }
+        m_shopList.clear();
         int  failCount = 0;
         for ( int shopIdx=0; shopIdx<joShopArray.size(); ++shopIdx ) {
             JSONObject joShop = joShopArray.getJSONObject(shopIdx);
@@ -272,7 +280,7 @@ public class CarInfoActivity extends AppCompatActivity
         } else {
             for (Shop shop : m_shopList) {
                 if (id == SHOP_MENU_START_ID + shop.getId()) {
-                    m_currentShop = shop;
+//                    m_currentShop = shop;
                     Intent it = new Intent();
                     it.putExtra("shop", shop);
                     it.putExtra("carId", m_carId);

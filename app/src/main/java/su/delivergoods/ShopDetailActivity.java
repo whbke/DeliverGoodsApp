@@ -308,8 +308,10 @@ public class ShopDetailActivity extends AppCompatActivity {
                 if ( response.isSuccessful() ) {
                     HttpResponseMsg res = HttpResponseMsg.parse(((RealResponseBody) response.body()).string());
                     if (res.getStatus()) {
+                        // 刷新订单
                         refreshNoteInfo();
-                        // 刷新CarInfo TODO
+                        // 刷新CarInfo
+                        CarInfoActivity.getInstance().updateCarInfo();
                     } else {
                         ToastUtils.show(ShopDetailActivity.this, "提交失败！");
                     }
