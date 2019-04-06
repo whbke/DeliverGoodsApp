@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShopDetailActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+    <TextView
+        android:id="@+id/text_shop_name"
+        android:layout_width="360dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/action_navigation"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/action_navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/action_commit_note"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/action_commit_note"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/action_commit_note"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TableLayout
+        android:id="@+id/table_shop_goods"
+        android:layout_width="368dp"
+        android:layout_height="384dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_total_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_shop_name">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/text_total_price"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/text_total_price"
+        app:layout_constraintBottom_toTopOf="@+id/text_actual_price"
+        app:layout_constraintEnd_toStartOf="@+id/text_total_price_val"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table_shop_goods" />
+
+    <TextView
+        android:id="@+id/text_actual_price"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/text_actual_price"
+        app:layout_constraintBottom_toTopOf="@+id/text_bookkeeping"
+        app:layout_constraintEnd_toStartOf="@+id/edit_actual_price_val"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_total_price" />
+
+    <TextView
+        android:id="@+id/text_bookkeeping"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/text_bookkeeping"
+        app:layout_constraintBottom_toTopOf="@+id/action_navigation"
+        app:layout_constraintEnd_toStartOf="@+id/edit_bookkeeping_val"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_actual_price" />
+
+    <TextView
+        android:id="@+id/text_total_price_val"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/edit_bg"
+        android:padding="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/edit_actual_price_val"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_total_price"
+        app:layout_constraintTop_toBottomOf="@+id/table_shop_goods" />
+
+    <EditText
+        android:id="@+id/edit_actual_price_val"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/edit_bg"
+        android:ems="10"
+        android:inputType="number"
+        android:padding="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/edit_bookkeeping_val"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/text_actual_price"
+        app:layout_constraintTop_toBottomOf="@+id/text_total_price_val" />
+
+    <EditText
+        android:id="@+id/edit_bookkeeping_val"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/edit_bg"
+        android:ems="10"
+        android:inputType="number"
+        android:padding="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/action_commit_note"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toEndOf="@+id/text_bookkeeping"
+        app:layout_constraintTop_toBottomOf="@+id/edit_actual_price_val" />
+
+</android.support.constraint.ConstraintLayout>

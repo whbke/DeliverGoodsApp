@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">苏嫂配货</string>
+    <string name="title_activity_login">登录</string>
+    <string name="action_navigation">导航</string>
+    <string name="prompt_username">用户名</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_in">登录/注册</string>
+    <string name="action_sign_in_short">登录</string>
+    <string name="error_invalid_email">Email地址无效</string>
+    <string name="error_invalid_password">密码太短</string>
+    <string name="error_incorrect_password">密码错误</string>
+    <string name="error_field_required">不能为空</string>
+    <string name="title_activity_shop_list">商店列表</string>
+    <string name="navigation_drawer_open">打开导航</string>
+    <string name="navigation_drawer_close">关闭导航</string>
+    <string name="action_settings">设置</string>
+    <string name="action_commit_note">提交订单</string>
+    <string name="text_shop_name">商店名称</string>
+    <string name="title_function">功能</string>
+    <string name="title_info">信息</string>
+    <string name="title_refresh">刷新</string>
+    <string name="text_car_name">车辆</string>
+    <string name="text_route_name">路线</string>
+    <string name="nav_header_desc">描述</string>
+    <string name="nav_header_subtitle">子标题</string>
+    <string name="nav_header_title">标题</string>
+    <string name="permission_rationale">权限</string>
+    <string name="title_activity_shop_detail">商店详情</string>
+    <string name="text_total_price">总净额</string>
+    <string name="text_actual_price">实收金额</string>
+    <string name="text_bookkeeping">记账金额</string>
+</resources>
