@@ -255,7 +255,7 @@ public class ShopDetailActivity extends AppCompatActivity {
         "bookkeeping": 2,
         "goodsList": [
             {
-                "id": 1,
+                "goodsItemId": 1,
                 "goodsId": 1,
                 "number": 10,
                 "unitId": 1
@@ -273,7 +273,7 @@ public class ShopDetailActivity extends AppCompatActivity {
         JSONArray goodsListArray = new JSONArray();
         for ( Map.Entry<Integer, JSONObject> entry: m_viewId2goodsInfo.entrySet() ) {
             JSONObject goodsItem = entry.getValue();
-            goodsItem.put("id", goodsItem.getInteger("id"));
+            goodsItem.put("goodsItemId", goodsItem.getInteger("goodsItemId"));
             goodsItem.put("goodsId", goodsItem.getInteger("goodsId"));
             goodsItem.put("number", Integer.valueOf(((EditText)findViewById(entry.getKey())).getText().toString()));
             goodsItem.put("unitId", goodsItem.getInteger("unitId"));
