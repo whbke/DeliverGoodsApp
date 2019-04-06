@@ -185,7 +185,7 @@ public class CarInfoActivity extends AppCompatActivity
                 row.addView(nameView);
 
                 TextView numberView = new TextView(CarInfoActivity.this);
-                numberView.setText(joGoods.getString("currentNumber") + joGoods.getString("unit_name"));
+                numberView.setText(joGoods.getString("currentNumber") + joGoods.getString("unitName"));
                 numberView.setPadding(0, 0, 0, 0);
                 numberView.setWidth(width);
                 row.addView(numberView);
